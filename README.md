@@ -49,7 +49,7 @@ com.ddt.oauth.configuration.OAuth2SecurityConfig makes /home, "/index.html", /er
     spring.security.oauth2.client.provider.<i>your_custom_client_provider_label</i>.provider.authorization-uri=https://your.wordpress.site.com/oauth/authorize   
     spring.security.oauth2.client.provider.your_custom_client_provider_label.token-uri=https://your.wordpress.site.com/oauth/token
     spring.security.oauth2.client.provider.your_custom_client_provider_label.user-info-uri=https://your.wordpress.site.com/oauth/me
-    '# These are custom fields (also see code). 
+    # These are custom fields (also see code). 
     oauth2.provider-logout-endpoint=https://your.wordpress.site.com/oauth/destroy?post_logout_redirect_uri=http://localhost:8080/logged_out
     oauth2.logout-success-url=http://localhost:8080/logged_out  
     oauth2.login-page=/oauth2/authorize/your_custom_client_provider_label

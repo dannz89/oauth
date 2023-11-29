@@ -12,5 +12,6 @@ public class MVCConfig implements WebMvcConfigurer {
         registry.addViewController("/home").setViewName("forward:/index.html");
         registry.addViewController("/error").setViewName("forward:/error.html");
         registry.addViewController("/secret").setViewName("forward:/secret.html");
+        registry.addViewController("/logged_out").setViewName("forward:/index.html");
     }
 }

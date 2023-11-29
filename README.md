@@ -28,7 +28,7 @@ com.ddt.oauth.configuration.OAuth2SecurityConfig makes /home, "/index.html", /er
    5. Maven 3.8.2
    6. IntelliJ IDEA v 2023.2.5 (Community Edition)
    7. git 2.42.1
-7. Ideally, to be a JAVA dev who understand these instructions well enough to infer what's going on without any further explanation than what's been provided here.
+7. Ideally, to be a JAVA dev who understands these instructions well enough to infer what's going on without any further explanation than what's been provided here.
 
 <h2>To build, run and test:</h2>
 1. Copy the repo to your system (for example by downloading it to your computer). 

@@ -75,6 +75,7 @@ If you're interested in seeing what's going on during the OAuth2 authentication 
 
 <h3>Note on property values</h3>
 1. Look at the property values carefully, how you need to change them should be reasonably self documenting. They assume you're running the spring boot app on your computer (localhost:8080). The values will <b>NOT</b> work out of the box. You need to put in your own WordPress site URL, your own client ID and client secret. In most cases, it should be a case of replacing the hostname parts of the URLs with your own WordPress site hostname and the provider registration name you have set up in your WordPress OAuth2 plugin.
+
 2. If you use spring-mvc.log-request-details=true, remember to change it to false or remove it (it's false is the default setting so deleting it will set it back to false) when you deploy to your live server. It exposes sensitive information the logs. Strictly for dev purposes!
 
 <h1>Peculiarities of the project</h1>

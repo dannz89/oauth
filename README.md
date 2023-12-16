@@ -24,11 +24,11 @@ com.ddt.oauth.configuration.OAuth2SecurityConfig makes /home, "/index.html", /er
 4. The client ID and client secret values from your OAuth2 plugin client settings page (see application.properties setup below).
 3. Enough understanding of the OAuth2 'authorization code' authentication flow to set up your application.yaml / application.properties correctly.
 3. These development tools (it may work with other versions and IDEs, but I haven't tested it, you're on your own if you deviate):
-   4. JAVA JDK 17.0.6
-   5. Maven 3.8.2
-   6. IntelliJ IDEA v 2023.2.5 (Community Edition)
-   7. git 2.42.1
-7. Ideally, to be a JAVA dev who understands these instructions well enough to infer what's going on without any further explanation than what's been provided here.
+   1. JAVA JDK 17.0.6
+   2. Maven 3.8.2
+   3. IntelliJ IDEA v 2023.2.5 (Community Edition)
+   4. git >=2.42.1
+4. Ideally, to be a JAVA dev who understands these instructions well enough to infer what's going on without any further explanation than what's been provided here.
 
 <h2>To build, run and test:</h2>
 1. Copy the repo to your system (for example by downloading it to your computer). 
@@ -39,20 +39,20 @@ com.ddt.oauth.configuration.OAuth2SecurityConfig makes /home, "/index.html", /er
 4. Open your IDE and open the oauth project.
 5. I have .gitignore'd my real application properties to protect sensitive authentication data. The values I have provided here are correct in that they reflect the same endpoint mappings used by the WordPress plugin but I've changed the site URL. I have also, needless to say given fake random values for the sensitive data rather than the real ones. With this in mind, create an application.properties (or application.yaml, whichever you normally use) file in src\main\resources. The application.properties version needs to look something like this:
 
-    spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.clientID=01234abcdefveryimportantsecretid111222333 
-    spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.clientSecret=abcdefghijklman9998888veryimportantsecretsecret1111   
-    spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.authorization-grant-type=authorization_code
-    spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.client-name=<i>YOUR_CUSTOM_OAUTH2_CLIENT_NAME</i>   
-    spring.security.oauth2.client.registration.<i>your_custom_client_provider_label</i>.redirect-uri=http://localhost:8080/login/oauth2/code/your_custom_client_provider_label
-    spring.security.oauth2.client.registration.<i>your_custom_client_provider_label</i>.provider.userNameAttributeName=user_nicename
-    spring.security.oauth2.client.registration.<i>your_custom_client_provider_label</i>.provider=<i>your_custom_client_provider_label</i>
-    spring.security.oauth2.client.provider.<i>your_custom_client_provider_label</i>.provider.authorization-uri=https://your.wordpress.site.com/oauth/authorize   
-    spring.security.oauth2.client.provider.your_custom_client_provider_label.token-uri=https://your.wordpress.site.com/oauth/token
-    spring.security.oauth2.client.provider.your_custom_client_provider_label.user-info-uri=https://your.wordpress.site.com/oauth/me
-    # These are custom fields (also see code). 
-    oauth2.provider-logout-endpoint=https://your.wordpress.site.com/oauth/destroy?post_logout_redirect_uri=http://localhost:8080/logged_out
-    oauth2.logout-success-url=http://localhost:8080/logged_out  
-    oauth2.login-page=/oauth2/authorize/your_custom_client_provider_label
+      spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.clientID=01234abcdefveryimportantsecretid111222333 
+      spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.clientSecret=abcdefghijklman9998888veryimportantsecretsecret1111   
+      spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.authorization-grant-type=authorization_code
+      spring.security.oauth2.client.registration.<i>your_custom_client_provider_label.provider</i>.client-name=<i>YOUR_CUSTOM_OAUTH2_CLIENT_NAME</i>   
+      spring.security.oauth2.client.registration.<i>your_custom_client_provider_label</i>.redirect-uri=http://localhost:8080/login/oauth2/code/your_custom_client_provider_label
+      spring.security.oauth2.client.registration.<i>your_custom_client_provider_label</i>.provider.userNameAttributeName=user_nicename
+      spring.security.oauth2.client.registration.<i>your_custom_client_provider_label</i>.provider=<i>your_custom_client_provider_label</i>
+      spring.security.oauth2.client.provider.<i>your_custom_client_provider_label</i>.provider.authorization-uri=https://your.wordpress.site.com/oauth/authorize   
+      spring.security.oauth2.client.provider.your_custom_client_provider_label.token-uri=https://your.wordpress.site.com/oauth/token
+      spring.security.oauth2.client.provider.your_custom_client_provider_label.user-info-uri=https://your.wordpress.site.com/oauth/me
+      # These are custom fields (also see code). 
+      oauth2.provider-logout-endpoint=https://your.wordpress.site.com/oauth/destroy?post_logout_redirect_uri=http://localhost:8080/logged_out
+      oauth2.logout-success-url=http://localhost:8080/logged_out  
+      oauth2.login-page=/oauth2/authorize/your_custom_client_provider_label
 
 If you are using application.yaml, you can guess the contents from the above. The tabs do my head in. :-)
 
